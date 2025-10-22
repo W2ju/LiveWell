@@ -70,7 +70,6 @@ export default function EditMedicationForm({ medication, onSuccess }: EditMedica
           <Input
             id="edit-dosageAmount"
             type="number"
-            step="0.1"
             {...register('dosageAmount', { valueAsNumber: true })}
           />
           {errors.dosageAmount && <p className="text-sm text-red-500 mt-1">{errors.dosageAmount.message}</p>}
@@ -88,10 +87,6 @@ export default function EditMedicationForm({ medication, onSuccess }: EditMedica
             <SelectContent>
               <SelectItem value="mg">mg (milligram)</SelectItem>
               <SelectItem value="g">g (gram)</SelectItem>
-              <SelectItem value="mcg">mcg (microgram)</SelectItem>
-              <SelectItem value="ml">ml (milliliter)</SelectItem>
-              <SelectItem value="IU">IU (International Unit)</SelectItem>
-              <SelectItem value="units">units</SelectItem>
             </SelectContent>
           </Select>
           {errors.dosageUnit && <p className="text-sm text-red-500 mt-1">{errors.dosageUnit.message}</p>}

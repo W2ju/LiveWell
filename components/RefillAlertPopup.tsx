@@ -45,12 +45,7 @@ export default function RefillAlertPopup() {
 
     let dismissedData: Record<string, string> = {};
     if (dismissedDataStr) {
-      try {
         dismissedData = JSON.parse(dismissedDataStr);
-      } catch {
-        // If parsing fails, start with empty object
-        dismissedData = {};
-      }
     }
 
     // Mark this medication as dismissed today

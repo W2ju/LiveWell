@@ -63,7 +63,6 @@ export default function MedicationForm({ onSuccess }: MedicationFormProps) {
             <Input
               id="name"
               {...register('name')}
-              placeholder="e.g., Lisinopril"
             />
             {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name.message}</p>}
           </div>
@@ -74,9 +73,7 @@ export default function MedicationForm({ onSuccess }: MedicationFormProps) {
               <Input
                 id="dosageAmount"
                 type="number"
-
                 {...register('dosageAmount', { valueAsNumber: true })}
-                placeholder="e.g., 10"
               />
               {errors.dosageAmount && <p className="text-sm text-red-500 mt-1">{errors.dosageAmount.message}</p>}
             </div>
@@ -85,7 +82,7 @@ export default function MedicationForm({ onSuccess }: MedicationFormProps) {
               <Label htmlFor="dosageUnit">Dosage Unit *</Label>
               <Select
                 value={dosageUnit}
-                onValueChange={(value) => setValue('dosageUnit', value as 'mg' | 'g' | 'mcg' | 'ml' | 'IU' | 'units')}
+                onValueChange={(value) => setValue('dosageUnit', value as 'mg' | 'g' )}
               >
                 <SelectTrigger id="dosageUnit" className="w-full">
                   <SelectValue placeholder="Select unit" />
@@ -93,10 +90,6 @@ export default function MedicationForm({ onSuccess }: MedicationFormProps) {
                 <SelectContent>
                   <SelectItem value="mg">mg (milligram)</SelectItem>
                   <SelectItem value="g">g (gram)</SelectItem>
-                  <SelectItem value="mcg">mcg (microgram)</SelectItem>
-                  <SelectItem value="ml">ml (milliliter)</SelectItem>
-                  <SelectItem value="IU">IU (International Unit)</SelectItem>
-                  <SelectItem value="units">units</SelectItem>
                 </SelectContent>
               </Select>
               {errors.dosageUnit && <p className="text-sm text-red-500 mt-1">{errors.dosageUnit.message}</p>}
@@ -132,7 +125,6 @@ export default function MedicationForm({ onSuccess }: MedicationFormProps) {
                 id="quantityReceived"
                 type="number"
                 {...register('quantityReceived', { valueAsNumber: true })}
-                placeholder="e.g., 30"
               />
               {errors.quantityReceived && <p className="text-sm text-red-500 mt-1">{errors.quantityReceived.message}</p>}
             </div>
@@ -143,7 +135,6 @@ export default function MedicationForm({ onSuccess }: MedicationFormProps) {
                 id="daysSupply"
                 type="number"
                 {...register('daysSupply', { valueAsNumber: true })}
-                placeholder="e.g., 30"
               />
               {errors.daysSupply && <p className="text-sm text-red-500 mt-1">{errors.daysSupply.message}</p>}
             </div>
